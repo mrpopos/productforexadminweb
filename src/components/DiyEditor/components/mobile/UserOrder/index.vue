@@ -1,5 +1,5 @@
 <template>
-  <el-image src="https://shopro.sheepjs.com/admin/static/images/shop/decorate/orderCardStyle.png" />
+	<el-image src="https://shopro.sheepjs.com/admin/static/images/shop/decorate/orderCardStyle.png" />
 </template>
 <script setup lang="ts">
 import { UserOrderProperty } from './config'

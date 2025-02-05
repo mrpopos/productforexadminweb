@@ -7,11 +7,11 @@ import SSOLoginVue from './SSOLogin.vue'
 import ForgetPasswordForm from './ForgetPasswordForm.vue'
 
 export {
-  LoginForm,
-  MobileForm,
-  LoginFormTitle,
-  RegisterForm,
-  QrCodeForm,
-  SSOLoginVue,
-  ForgetPasswordForm
+	LoginForm,
+	MobileForm,
+	LoginFormTitle,
+	RegisterForm,
+	QrCodeForm,
+	SSOLoginVue,
+	ForgetPasswordForm
 }

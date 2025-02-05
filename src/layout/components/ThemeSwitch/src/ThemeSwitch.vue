@@ -22,25 +22,25 @@ const isDark = ref(appStore.getIsDark)
 const blackColor = 'var(--el-color-black)'
 
 const themeChange = (val: boolean) => {
-  appStore.setIsDark(val)
+	appStore.setIsDark(val)
 }
 </script>
 
 <template>
-  <ElSwitch
-    v-model="isDark"
-    :active-color="blackColor"
-    :active-icon="Sun"
-    :border-color="blackColor"
-    :class="prefixCls"
-    :inactive-color="blackColor"
-    :inactive-icon="CrescentMoon"
-    inline-prompt
-    @change="themeChange"
-  />
+	<ElSwitch
+		v-model="isDark"
+		:active-color="blackColor"
+		:active-icon="Sun"
+		:border-color="blackColor"
+		:class="prefixCls"
+		:inactive-color="blackColor"
+		:inactive-icon="CrescentMoon"
+		inline-prompt
+		@change="themeChange"
+	/>
 </template>
 <style lang="scss" scoped>
 :deep(.el-switch__core .el-switch__inner .is-icon) {
-  overflow: visible;
+	overflow: visible;
 }
 </style>

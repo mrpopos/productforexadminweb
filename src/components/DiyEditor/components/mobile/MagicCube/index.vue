@@ -1,47 +1,47 @@
 <template>
-  <div
-    class="relative"
-    :style="{ height: `${rowCount * CUBE_SIZE}px`, width: `${4 * CUBE_SIZE}px` }"
-  >
-    <div
-      v-for="(item, index) in property.list"
-      :key="index"
-      class="absolute"
-      :style="{
-        width: `${item.width * CUBE_SIZE - property.space * 2}px`,
-        height: `${item.height * CUBE_SIZE - property.space * 2}px`,
-        margin: `${property.space}px`,
-        top: `${item.top * CUBE_SIZE}px`,
-        left: `${item.left * CUBE_SIZE}px`
-      }"
-    >
-      <el-image
-        class="h-full w-full"
-        fit="cover"
-        :src="item.imgUrl"
-        :style="{
-          borderTopLeftRadius: `${property.borderRadiusTop}px`,
-          borderTopRightRadius: `${property.borderRadiusTop}px`,
-          borderBottomLeftRadius: `${property.borderRadiusBottom}px`,
-          borderBottomRightRadius: `${property.borderRadiusBottom}px`
-        }"
-      >
-        <template #error>
-          <div class="image-slot">
-            <div
-              class="flex items-center justify-center"
-              :style="{
-                width: `${item.width * CUBE_SIZE}px`,
-                height: `${item.height * CUBE_SIZE}px`
-              }"
-            >
-              <Icon icon="ep-picture" color="gray" :size="CUBE_SIZE" />
-            </div>
-          </div>
-        </template>
-      </el-image>
-    </div>
-  </div>
+	<div
+		class="relative"
+		:style="{ height: `${rowCount * CUBE_SIZE}px`, width: `${4 * CUBE_SIZE}px` }"
+	>
+		<div
+			v-for="(item, index) in property.list"
+			:key="index"
+			class="absolute"
+			:style="{
+				width: `${item.width * CUBE_SIZE - property.space * 2}px`,
+				height: `${item.height * CUBE_SIZE - property.space * 2}px`,
+				margin: `${property.space}px`,
+				top: `${item.top * CUBE_SIZE}px`,
+				left: `${item.left * CUBE_SIZE}px`
+			}"
+		>
+			<el-image
+				class="h-full w-full"
+				fit="cover"
+				:src="item.imgUrl"
+				:style="{
+					borderTopLeftRadius: `${property.borderRadiusTop}px`,
+					borderTopRightRadius: `${property.borderRadiusTop}px`,
+					borderBottomLeftRadius: `${property.borderRadiusBottom}px`,
+					borderBottomRightRadius: `${property.borderRadiusBottom}px`
+				}"
+			>
+				<template #error>
+					<div class="image-slot">
+						<div
+							class="flex items-center justify-center"
+							:style="{
+								width: `${item.width * CUBE_SIZE}px`,
+								height: `${item.height * CUBE_SIZE}px`
+							}"
+						>
+							<Icon icon="ep-picture" color="gray" :size="CUBE_SIZE" />
+						</div>
+					</div>
+				</template>
+			</el-image>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -60,13 +60,13 @@ const CUBE_SIZE = 93.75
  * 3. 顶部及中间的空白算高度，例如一共有四行，只有最后一行有数据，那么也显示四行的高度
  */
 const rowCount = computed(() => {
-  let count = 0
-  if (props.property.list.length > 0) {
-    // 最大行号
-    count = Math.max(...props.property.list.map((item) => item.bottom))
-  }
-  // 行号从 0 开始，所以加 1
-  return count + 1
+	let count = 0
+	if (props.property.list.length > 0) {
+		// 最大行号
+		count = Math.max(...props.property.list.map((item) => item.bottom))
+	}
+	// 行号从 0 开始，所以加 1
+	return count + 1
 })
 </script>
 

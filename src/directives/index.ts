@@ -8,17 +8,17 @@ import { hasPermi } from './permission/hasPermi'
  * @methods hasPermi 按钮权限，用法: v-hasPermi
  */
 export const setupAuth = (app: App<Element>) => {
-  hasRole(app)
-  hasPermi(app)
+	hasRole(app)
+	hasPermi(app)
 }
 
 /**
  * 导出指令：v-mountedFocus
  */
 export const setupMountedFocus = (app: App<Element>) => {
-  app.directive('mountedFocus', {
-    mounted(el) {
-      el.focus()
-    }
-  })
+	app.directive('mountedFocus', {
+		mounted(el) {
+			el.focus()
+		}
+	})
 }

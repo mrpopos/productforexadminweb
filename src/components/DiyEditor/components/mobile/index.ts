@@ -32,30 +32,30 @@ type ViewType = 'index' | 'property'
  * @param viewType 组件界面的类型
  */
 const registerComponentViewModule = (
-  componentId: string,
-  configPath: string,
-  viewType: ViewType
+	componentId: string,
+	configPath: string,
+	viewType: ViewType
 ) => {
-  const viewPath = configPath.replace('config.ts', `${viewType}.vue`)
-  const viewModule = viewModules[viewPath]
-  if (viewModule) {
-    // 定义异步组件
-    components[componentId] = defineAsyncComponent(viewModule)
-  }
+	const viewPath = configPath.replace('config.ts', `${viewType}.vue`)
+	const viewModule = viewModules[viewPath]
+	if (viewModule) {
+		// 定义异步组件
+		components[componentId] = defineAsyncComponent(viewModule)
+	}
 }
 
 // 注册
 Object.keys(configModules).forEach((modulePath: string) => {
-  const component = configModules[modulePath].component
-  const componentId = component?.id
-  if (componentId) {
-    // 注册组件
-    componentConfigs[componentId] = component
-    // 注册预览界面
-    registerComponentViewModule(componentId, modulePath, 'index')
-    // 注册属性配置表单
-    registerComponentViewModule(`${componentId}Property`, modulePath, 'property')
-  }
+	const component = configModules[modulePath].component
+	const componentId = component?.id
+	if (componentId) {
+		// 注册组件
+		componentConfigs[componentId] = component
+		// 注册预览界面
+		registerComponentViewModule(componentId, modulePath, 'index')
+		// 注册属性配置表单
+		registerComponentViewModule(`${componentId}Property`, modulePath, 'property')
+	}
 })
 
 export { components, componentConfigs }

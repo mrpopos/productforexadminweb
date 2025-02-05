@@ -6,10 +6,10 @@ import { useEditorRule } from './useEditorRule'
 import { useSelectRule } from './useSelectRule'
 
 export {
-  useUploadFileRule,
-  useUploadImgRule,
-  useUploadImgsRule,
-  useDictSelectRule,
-  useEditorRule,
-  useSelectRule
+	useUploadFileRule,
+	useUploadImgRule,
+	useUploadImgsRule,
+	useDictSelectRule,
+	useEditorRule,
+	useSelectRule
 }

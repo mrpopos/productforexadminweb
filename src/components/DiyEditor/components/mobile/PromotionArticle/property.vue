@@ -1,26 +1,26 @@
 <template>
-  <ComponentContainerProperty v-model="formData.style">
-    <el-form label-width="40px" :model="formData">
-      <el-form-item label="文章" prop="id">
-        <el-select
-          v-model="formData.id"
-          placeholder="请选择文章"
-          class="w-full"
-          filterable
-          remote
-          :remote-method="queryArticleList"
-          :loading="loading"
-        >
-          <el-option
-            v-for="article in articles"
-            :key="article.id"
-            :label="article.title"
-            :value="article.id"
-          />
-        </el-select>
-      </el-form-item>
-    </el-form>
-  </ComponentContainerProperty>
+	<ComponentContainerProperty v-model="formData.style">
+		<el-form label-width="40px" :model="formData">
+			<el-form-item label="文章" prop="id">
+				<el-select
+					v-model="formData.id"
+					placeholder="请选择文章"
+					class="w-full"
+					filterable
+					remote
+					:remote-method="queryArticleList"
+					:loading="loading"
+				>
+					<el-option
+						v-for="article in articles"
+						:key="article.id"
+						:label="article.title"
+						:value="article.id"
+					/>
+				</el-select>
+			</el-form-item>
+		</el-form>
+	</ComponentContainerProperty>
 </template>
 
 <script setup lang="ts">
@@ -41,15 +41,15 @@ const articles = ref<ArticleApi.ArticleVO>([])
 const loading = ref(false)
 // 查询文章列表
 const queryArticleList = async (title?: string) => {
-  loading.value = true
-  const { list } = await ArticleApi.getArticlePage({ title, pageSize: 10 })
-  articles.value = list
-  loading.value = false
+	loading.value = true
+	const { list } = await ArticleApi.getArticlePage({ title, pageSize: 10 })
+	articles.value = list
+	loading.value = false
 }
 
 // 初始化
 onMounted(() => {
-  queryArticleList()
+	queryArticleList()
 })
 </script>
 

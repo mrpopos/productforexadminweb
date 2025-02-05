@@ -1,23 +1,23 @@
 // 坐标点
 export interface Point {
-  x: number
-  y: number
+	x: number
+	y: number
 }
 
 // 矩形
 export interface Rect {
-  // 左上角 X 轴坐标
-  left: number
-  // 左上角 Y 轴坐标
-  top: number
-  // 右下角 X 轴坐标
-  right: number
-  // 右下角 Y 轴坐标
-  bottom: number
-  // 矩形宽度
-  width: number
-  // 矩形高度
-  height: number
+	// 左上角 X 轴坐标
+	left: number
+	// 左上角 Y 轴坐标
+	top: number
+	// 右下角 X 轴坐标
+	right: number
+	// 右下角 Y 轴坐标
+	bottom: number
+	// 矩形宽度
+	width: number
+	// 矩形高度
+	height: number
 }
 
 /**
@@ -26,12 +26,12 @@ export interface Rect {
  * @param b 矩形 B
  */
 export const isOverlap = (a: Rect, b: Rect): boolean => {
-  return (
-    a.left < b.left + b.width &&
-    a.left + a.width > b.left &&
-    a.top < b.top + b.height &&
-    a.height + a.top > b.top
-  )
+	return (
+		a.left < b.left + b.width &&
+		a.left + a.width > b.left &&
+		a.top < b.top + b.height &&
+		a.height + a.top > b.top
+	)
 }
 /**
  * 检查坐标点是否在矩形内
@@ -39,12 +39,12 @@ export const isOverlap = (a: Rect, b: Rect): boolean => {
  * @param point 坐标
  */
 export const isContains = (hotArea: Rect, point: Point): boolean => {
-  return (
-    point.x >= hotArea.left &&
-    point.x < hotArea.right &&
-    point.y >= hotArea.top &&
-    point.y < hotArea.bottom
-  )
+	return (
+		point.x >= hotArea.left &&
+		point.x < hotArea.right &&
+		point.y >= hotArea.top &&
+		point.y < hotArea.bottom
+	)
 }
 
 /**
@@ -60,13 +60,13 @@ export const isContains = (hotArea: Rect, point: Point): boolean => {
  * @param b 坐标点二
  */
 export const createRect = (a: Point, b: Point): Rect => {
-  // 计算矩形的范围
-  const [left, left2] = [a.x, b.x].sort()
-  const [top, top2] = [a.y, b.y].sort()
-  const right = left2 + 1
-  const bottom = top2 + 1
-  const height = bottom - top
-  const width = right - left
+	// 计算矩形的范围
+	const [left, left2] = [a.x, b.x].sort()
+	const [top, top2] = [a.y, b.y].sort()
+	const right = left2 + 1
+	const bottom = top2 + 1
+	const height = bottom - top
+	const width = right - left
 
-  return { left, right, top, bottom, height, width }
+	return { left, right, top, bottom, height, width }
 }

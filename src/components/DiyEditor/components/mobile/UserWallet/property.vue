@@ -1,5 +1,5 @@
 <template>
-  <ComponentContainerProperty v-model="formData.style" />
+	<ComponentContainerProperty v-model="formData.style" />
 </template>
 
 <script setup lang="ts">

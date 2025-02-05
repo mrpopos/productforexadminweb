@@ -1,20 +1,20 @@
 <template>
-  <div
-    class="flex items-center"
-    :style="{
-      height: property.height + 'px'
-    }"
-  >
-    <div
-      class="w-full"
-      :style="{
-        borderTopStyle: property.borderType,
-        borderTopColor: property.lineColor,
-        borderTopWidth: `${property.lineWidth}px`,
-        margin: property.paddingType === 'none' ? '0' : '0px 16px'
-      }"
-    ></div>
-  </div>
+	<div
+		class="flex items-center"
+		:style="{
+			height: property.height + 'px'
+		}"
+	>
+		<div
+			class="w-full"
+			:style="{
+				borderTopStyle: property.borderType,
+				borderTopColor: property.lineColor,
+				borderTopWidth: `${property.lineWidth}px`,
+				margin: property.paddingType === 'none' ? '0' : '0px 16px'
+			}"
+		></div>
+	</div>
 </template>
 
 <script setup lang="ts">

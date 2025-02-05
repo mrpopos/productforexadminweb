@@ -1,5 +1,5 @@
 <template>
-  <Error @error-click="push('/')" />
+	<Error @error-click="push('/')" />
 </template>
 <script lang="ts" setup>
 defineOptions({ name: 'Error404' })

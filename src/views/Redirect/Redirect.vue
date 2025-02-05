@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+	<div></div>
 </template>
 <script lang="ts" setup>
 defineOptions({ name: 'Redirect' })
@@ -14,15 +14,15 @@ Reflect.deleteProperty(params, 'path')
 const _path = Array.isArray(path) ? path.join('/') : path
 
 if (_redirect_type === 'name') {
-  replace({
-    name: _path,
-    query,
-    params
-  })
+	replace({
+		name: _path,
+		query,
+		params
+	})
 } else {
-  replace({
-    path: _path.startsWith('/') ? _path : '/' + _path,
-    query
-  })
+	replace({
+		path: _path.startsWith('/') ? _path : '/' + _path,
+		query
+	})
 }
 </script>
